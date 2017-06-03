@@ -1,0 +1,12 @@
+rkt run \
+--hostname=$(hostname)-container \
+--set-env=MYSQL_ROOT_PASSWORD=somepass \
+--set-env=DISCOVERY_SERVICE=$(hostname -I | awk '{print $1}'):2379 \
+--set-env=CLUSTER_NAME=somectestcluster \
+--set-env=XTRBACKUP_PASSWORD=xtr4b4ckup \
+--port=3306-tcp:13601 \
+--insecure-options=image \
+docker://quay.io/zozo6015/percona-xtradb:latest \
+--name=xtradb \
+-- --log-output=stderr --- \
+--debug=true

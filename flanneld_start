@@ -1,0 +1,4 @@
+./flanneld \
+--public-ip="$(hostname -I | awk '{print $1}')" \
+--etcd-endpoints=http://162.220.52.151:2379,http://162.220.52.117:2379,http://162.220.52.190:2379 \
+--iface=eth0

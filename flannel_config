@@ -1,0 +1,1 @@
+rkt enter --app=etcd {rkt etcd container id} etcdctl set /coreos.com/network/config '{ "network": "172.16.28.0/24" }'
