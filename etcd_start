@@ -11,7 +11,7 @@ rkt run \
 --set-env=ETCD_ADVERTISE_CLIENT_URLS=http://$(hostname -I | awk '{print $1}'):2379 \
 --set-env=ETCD_NAME=$(hostname)-etcd-cluster \
 --set-env=ETCD_DATA_DIR=$(hostname) \
-coreos.com/etcd:v3.1.8 \
+coreos.com/etcd:v3.2.0 \
 -- --log-output=stderr --- \
 --insecure-options=image \
 docker://dkron/dkron \
